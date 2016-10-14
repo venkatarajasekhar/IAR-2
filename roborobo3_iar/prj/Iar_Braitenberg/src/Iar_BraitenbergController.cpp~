@@ -1,0 +1,71 @@
+/**
+ * @author Nicolas Bredeche <nicolas.bredeche@upmc.fr>
+ */
+
+
+#include "Iar_Braitenberg/include/Iar_BraitenbergController.h"
+
+Iar_BraitenbergController::Iar_BraitenbergController( RobotWorldModel *__wm ) : Controller ( __wm )
+{
+	// nothing to do
+}
+
+Iar_BraitenbergController::~Iar_BraitenbergController()
+{
+	// nothing to do.
+}
+
+void Iar_BraitenbergController::reset()
+{
+	// nothing to do.
+}
+
+
+void Iar_BraitenbergController::step()
+{
+    _wm->_desiredTranslationalValue = 0.2; // dans [-2,+2]
+    _wm->_desiredRotationalVelocity = 1.0; // dans [-30,+30]
+    
+    monitorSensoryInformation();
+}
+
+void Iar_BraitenbergController::monitorSensoryInformation()
+{
+    // Note that this code is executed only for the agent which is "on focus". By default, this means agent #0.
+    // When window mode:
+    //      To show which agent has the focus, press 'F'
+    //      To cycle through agents, press <tab> (or shift+<tab>)
+        
+    if ( gVerbose && gDisplayMode == 0 && gRobotIndexFocus == _wm->getId() )
+    {
+        
+        std::cout << "=-= Robot #" << _wm->getId() << " : STARTING monitoring sensory information at iteration #" << gWorld->getIterations() << ".\n";
+        
+        // Rotational and translational speed, agent orientation wrt. upwards
+        //      - *actual* and *desired* translational/rotational values are very different
+        //          - actual values is what the robot is actually doing (this is measured)
+        //          - desired values are set by the controller (this is set and the hardware controller tries to match it)
+        //          - rational: you may ask for something (e.g. max speed) but physics and electronics may be limited
+        //          - typical example: when going for max speed, the robot cannot instantaneously go at max speed.
+        
+        std::cout << "Agent desired translational speed: " << _wm->_desiredTranslationalValue << std::endl;
+        std::cout << "Agent desired rotational speed: " << std::setw(4) << _wm->_desiredRotationalVelocity << std::endl;
+        
+        std::cout << "Agent actual translational speed: " << _wm->_actualTranslationalValue << std::endl;
+        std::cout << "Agent actual rotational speed: " << std::setw(4) << _wm->_actualRotationalVelocity << std::endl;
+
+        // Camera/distance sensors -- provide: distance to obstacle, obstacle type, orientation (if robot)
+        // REMARKS:
+        //      - distance sensors are actually camera rays, and provides extended information:
+        //          - distance to contact
+        
+        for(int i  = 0; i < _wm->_cameraSensorsNb; i++)
+        {
+            double distance = _wm->getDistanceValueFromCameraSensor(i);
+            std::cout << "Sensor #" << i << " returns distance " << std::setw(4) << distance << "/" << std::setw(4) << gSensorRange << "\n";
+
+        }
+        std::cout << "=-= Robot #" << _wm->getId() << " : STOPPING monitoring sensory information\n";
+    }
+    
+}

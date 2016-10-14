@@ -1,0 +1,15 @@
+# =-=-=-=-=-=-=-=-=-=-=
+# LOG DATA 
+# =-=-=-=-=-=-=-=-=-=-=
+#
+# =-= Roborobo^2 
+# =-= Official version tag    : 20160122
+# =-= Current build name      : Lutetia build (roborobo^3 w/ SDL2)
+# =-= Compilation version tag : Oct 14 2016 - 08:41:03
+#
+# Loaded time stamp           : 20161014-11h19m45s853523us
+#
+# random seed             : 1476436785
+# Started: 20161014-11h19m45s853523us
+# Stopped: 20161014-11h20m04s004319us
+# Elapsed: 19 seconds.
