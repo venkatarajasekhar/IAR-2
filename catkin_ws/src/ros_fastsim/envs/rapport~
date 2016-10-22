@@ -1,0 +1,50 @@
+Rapport TP IAR 8 janvier
+PAUMARD RIVOIRE
+
+QUESTION 1 
+
+Après essais, nous avons opté pour un pas de temps de 10, plus efficace.
+
+QUESTION 2
+
+Voir fichier question2.log.
+
+Médiane : 82.7998869419
+Minimum : 15.1048119068
+1er quartile : 17.6001558304
+3eme quartile : 266.1000452042
+Maximum : 525.0999181271
+
+Ces temps sont très disparates, de par le fait que le comportement est arbitraire.
+
+QUESTION 3
+
+Nous avons opté pour une structure de données sous forme de dictionnaire en deux dimensions pour Q. Avant le premier trial, nous initialisons Q à 0 et S_t à '0000', puisqu'il faut disposer des valeurs au temps t-1 pour effectuer les calculs.
+
+Nous avons ajouté un décompte du nombre de collisions pour chaque trial.
+
+La fréquence étant de 10Hz, un pas de temps dure 0,1s. Pour représenter deux secondes depuis la dernière action, nous avons mis en place une itération tous les 20 pas de temps. Nous aurions aussi pu définir une itération basée sur le calcul du temps écoulé depuis la dernière prise de décision.
+
+QUESTION 4
+
+Voir fichier question4-1.log et question4-2.log
+
+Dans le fichier question4-1.log, nous avons les résultats sur 3 expériences pour alpha =0.4, beta = 8, et gamma = 0.9 (il manque les statistiques pour le nombre de collisions, dû à une erreur dans les logs).
+Dans le fichier question4-2.log, nous avons les résultats sur 3 expériences pour alpha =0.8, beta = 8, et gamma = 0.6.
+
+Dans le permier cas, on ne voit pas vraiment d'améliorations dans les performances, à cause du nombre restreint d'expériences.
+
+Dans les valeur de Q finales, nous avons :
+'1110': {0: -0.004263612959058611, 1: -0.6008640477785904}
+'1117': {0: -0.013874915904676929, 1: -0.3369281752907137}
+'0000': {0: 0.07463117685705675, 1: 0.03945220347685468}
+'0007': {0: 0.06389790768976394, 1: 0.027320650450913295}
+
+Quand le robot est encadré par des murs on peut voir que :
+ - les valeurs de Q sont négatives : ce n'est pas une bonne configuration
+ - les valeurs pour le suivi de mur sont meilleures : cette stratégie est privilégiée. C'est bien ce à quoi on pourrait s'attendre.
+
+Quand le robot n'observe aucun obstacle, en théorie, on s'attend à ce que le comportement de guidage soit valorisé. Dans la pratique, les valeurs sont très faibles, trop pour être pertinentes. Nous supposons que c'est parce que le robot ne passe pas assez de temps dans cette configuration.
+
+
+

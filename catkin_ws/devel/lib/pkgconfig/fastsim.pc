@@ -1,0 +1,8 @@
+prefix=/home/viki/catkin_ws/devel
+
+Name: fastsim
+Description: Description of fastsim
+Version: 0.0.0
+Cflags: -I/home/viki/catkin_ws/devel/include
+Libs: -L/home/viki/catkin_ws/devel/lib 
+Requires: roscpp std_msgs

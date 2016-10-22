@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "iac")
+set(iac_MAINTAINER "viki <viki@todo.todo>")
+set(iac_DEPRECATED "")
+set(iac_VERSION "0.0.0")
+set(iac_BUILD_DEPENDS "roscpp" "rospy" "std_msgs")
+set(iac_RUN_DEPENDS "roscpp" "rospy" "std_msgs")
+set(iac_BUILDTOOL_DEPENDS "catkin")

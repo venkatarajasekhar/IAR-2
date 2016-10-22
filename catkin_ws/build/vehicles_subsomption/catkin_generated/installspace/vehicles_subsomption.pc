@@ -1,0 +1,8 @@
+prefix=/home/viki/catkin_ws/install
+
+Name: vehicles_subsomption
+Description: Description of vehicles_subsomption
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/viki/catkin_ws/install/lib 
+Requires: 

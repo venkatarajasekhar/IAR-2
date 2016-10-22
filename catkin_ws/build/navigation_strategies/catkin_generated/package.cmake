@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "navigation_strategies")
+set(navigation_strategies_MAINTAINER "Benoit Girard <benoit.girard@isir.upmc.fr>")
+set(navigation_strategies_DEPRECATED "")
+set(navigation_strategies_VERSION "0.0.0")
+set(navigation_strategies_BUILD_DEPENDS "roscpp" "rospy" "message_generation")
+set(navigation_strategies_RUN_DEPENDS "roscpp" "rospy" "message_runtime")
+set(navigation_strategies_BUILDTOOL_DEPENDS "catkin")

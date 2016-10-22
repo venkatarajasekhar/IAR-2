@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "my_controller")
+set(my_controller_MAINTAINER "viki <viki@todo.todo>")
+set(my_controller_DEPRECATED "")
+set(my_controller_VERSION "0.0.0")
+set(my_controller_BUILD_DEPENDS "roscpp" "geometry_msgs")
+set(my_controller_RUN_DEPENDS "roscpp" "geometry_msgs")
+set(my_controller_BUILDTOOL_DEPENDS "catkin")

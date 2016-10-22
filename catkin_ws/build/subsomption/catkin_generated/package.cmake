@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "subsomption")
+set(subsomption_MAINTAINER "Stephane Doncieux <stephane.doncieux@upmc.fr>")
+set(subsomption_DEPRECATED "")
+set(subsomption_VERSION "1.0.0")
+set(subsomption_BUILD_DEPENDS "std_msgs" "message_generation")
+set(subsomption_RUN_DEPENDS "std_msgs" "message_runtime")
+set(subsomption_BUILDTOOL_DEPENDS "catkin")

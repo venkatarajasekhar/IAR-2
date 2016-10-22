@@ -1,0 +1,8 @@
+prefix=/home/viki/catkin_ws/install
+
+Name: navigation_strategies
+Description: Description of navigation_strategies
+Version: 0.0.0
+Cflags: -I/home/viki/catkin_ws/install/include
+Libs: -L/home/viki/catkin_ws/install/lib 
+Requires: message_runtime
